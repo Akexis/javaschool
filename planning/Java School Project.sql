@@ -13,6 +13,17 @@ CREATE TABLE `roleType` (
   `role` varchar(255)
 );
 
+CREATE TABLE `isApproved` (
+  `user` user_id,
+  `approve` boolean NOT NULL
+);
+
+CREATE TABLE `approvalComments` (
+  `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `user` user_id,
+  `comment` varchar(255)
+);
+
 CREATE TABLE `address` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `street` varchar(255),
@@ -145,6 +156,10 @@ CREATE TABLE `salaryType` (
 );
 
 ALTER TABLE `users` ADD FOREIGN KEY (`role`) REFERENCES `roleType` (`id`);
+
+ALTER TABLE `isApproved` ADD FOREIGN KEY (`user`) REFERENCES `users` (`id`);
+
+ALTER TABLE `approvalComments` ADD FOREIGN KEY (`user`) REFERENCES `users` (`id`);
 
 ALTER TABLE `address` ADD FOREIGN KEY (`state`) REFERENCES `stateType` (`id`);
 
