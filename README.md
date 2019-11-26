@@ -18,14 +18,17 @@ View Planning / Storyboarding<br/>
 *student-dashboard.jpg<br/>
 *student-staff.jpg<br/>
 *teacher-dashboard.jpg<br/>
+*Wireframes.pdf</br>
 
 ## Tools
 *SpringToolSuite4<br/>
 *dbdiagram.io<br/>
 *lucidchart.com<br/>
+*Justinmind.com<br/>
 
 ## Frameworks
-*Spring Boot
+*Spring Boot<br />
+*Mockito<br />
 
 ## Useful Video Tutorial Series
 *Java Basics: [Caleb Curry](https://www.youtube.com/watch?v=r3GGV2TG_vw&list=PL_c9BZzLwBRKIMP_xNTJxi9lIgQhE51rF)<br/>
