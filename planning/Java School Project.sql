@@ -5,7 +5,8 @@ CREATE TABLE `users` (
   `profilepic` varchar(255),
   `password` varchar(255) NOT NULL,
   `role` roleType_id,
-  `bio` varchar(255)
+  `bio` varchar(255),
+  `registered` datetime
 );
 
 CREATE TABLE `roleType` (
@@ -80,6 +81,13 @@ CREATE TABLE `schoolEmail` (
   `email` email_id
 );
 
+CREATE TABLE `semester` (
+  `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `month` char,
+  `year` char,
+  `quarter` integer
+);
+
 CREATE TABLE `course` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `teacher` teacher_id,
@@ -122,15 +130,16 @@ CREATE TABLE `grades` (
   `teacher` teacher_id,
   `date` date,
   `course` course_id,
-  `grade` integer
+  `grade` integer,
+  `semester` semester_id
 );
 
 CREATE TABLE `homeworkAssign` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `course` course_id,
   `name` varchar(255),
-  `dateissued` date,
-  `datedue` date,
+  `dateissued` datetime,
+  `datedue` datetime,
   `summary` varchar(255)
 );
 
@@ -138,7 +147,7 @@ CREATE TABLE `homeworkUpload` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `student` users_id,
   `homeworkAssign` homeworkAssign_id,
-  `dateuploaded` date,
+  `dateuploaded` datetime,
   `url` varchar(255)
 );
 
@@ -212,6 +221,8 @@ ALTER TABLE `grades` ADD FOREIGN KEY (`student`) REFERENCES `users` (`id`);
 ALTER TABLE `grades` ADD FOREIGN KEY (`teacher`) REFERENCES `users` (`id`);
 
 ALTER TABLE `grades` ADD FOREIGN KEY (`course`) REFERENCES `course` (`id`);
+
+ALTER TABLE `grades` ADD FOREIGN KEY (`semester`) REFERENCES `semester` (`id`);
 
 ALTER TABLE `homeworkAssign` ADD FOREIGN KEY (`course`) REFERENCES `course` (`id`);
 
