@@ -29,6 +29,7 @@ View Planning / Storyboarding<br/>
 ## Frameworks
 *Spring Boot<br />
 *Mockito<br />
+*Maven<br />
 
 ## Useful Video Tutorial Series
 *Java Basics: [Caleb Curry](https://www.youtube.com/watch?v=r3GGV2TG_vw&list=PL_c9BZzLwBRKIMP_xNTJxi9lIgQhE51rF)<br/>
