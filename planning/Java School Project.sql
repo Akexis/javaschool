@@ -6,17 +6,13 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `role` roleType_id,
   `bio` varchar(255),
-  `registered` datetime
+  `registered` datetime,
+  `approve` boolean
 );
 
 CREATE TABLE `roleType` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `role` varchar(255)
-);
-
-CREATE TABLE `isApproved` (
-  `user` user_id,
-  `approve` boolean NOT NULL
 );
 
 CREATE TABLE `approvalComments` (
@@ -84,7 +80,7 @@ CREATE TABLE `schoolEmail` (
 CREATE TABLE `semester` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `month` char,
-  `year` char,
+  `year` integer,
   `quarter` integer
 );
 
@@ -165,8 +161,6 @@ CREATE TABLE `salaryType` (
 );
 
 ALTER TABLE `users` ADD FOREIGN KEY (`role`) REFERENCES `roleType` (`id`);
-
-ALTER TABLE `isApproved` ADD FOREIGN KEY (`user`) REFERENCES `users` (`id`);
 
 ALTER TABLE `approvalComments` ADD FOREIGN KEY (`user`) REFERENCES `users` (`id`);
 
