@@ -4,6 +4,9 @@ Practice Project to learn Java
 This is a mock project and will have no commercial use.
 
 ## Planning Phase
+01.03.20
+Learning more about API design and how to plan out end-points as well as setting up application structure in Lucidchart.
+
 11.06.19
 Going to use Spring Boot for the bulk of this project. Not sure what I'm going to use for the front-end yet. Moving on to wireframing.
 
@@ -25,13 +28,19 @@ View Planning / Storyboarding<br/>
 * dbdiagram.io<br/>
 * lucidchart.com<br/>
 * Justinmind.com<br/>
+* getpostman.com<br />
 
 ## Frameworks
 * Spring Boot<br />
 * Mockito<br />
 * Maven<br />
+* JUnit<br />
 
 ## Useful Video Tutorial Series
 * Java Basics: [Caleb Curry](https://www.youtube.com/watch?v=r3GGV2TG_vw&list=PL_c9BZzLwBRKIMP_xNTJxi9lIgQhE51rF)<br/>
 * Java 8 Lambda Intro: [javabrains.io](https://www.youtube.com/watch?v=gpIUfj3KaOc&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3)<br/>
-* Spring Boot Quickstart: [javabrains.io](https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x)<br/> 
+* Spring Boot Quickstart: [javabrains.io](https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x)<br/>
+
+## Useful Articles and Books
+* [API Guidelines](https://github.com/byrondover/api-guidelines/blob/master/Guidelines.md)
+* [Enterprise API Management by Luis Weir](https://www.packtpub.com/virtualization-and-cloud/enterprise-api-management)
