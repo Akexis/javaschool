@@ -1,4 +1,4 @@
-# javaschool
+# Abbott DigiU
 Practice Project to learn Java
 
 This is a mock project and will have no commercial use.
