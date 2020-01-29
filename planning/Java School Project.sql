@@ -79,7 +79,6 @@ CREATE TABLE `schoolEmail` (
 
 CREATE TABLE `semester` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `month` char,
   `year` integer,
   `quarter` integer
 );
@@ -121,7 +120,8 @@ CREATE TABLE `school` (
   `campuslogo` varchar(255)
 );
 
-CREATE TABLE `grades` (
+CREATE TABLE `grade` (
+  `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `student` student_id,
   `teacher` teacher_id,
   `date` date,
@@ -156,7 +156,7 @@ CREATE TABLE `homeworkResources` (
 CREATE TABLE `salaryType` (
   `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `staff` user_id,
-  `type` varchar(255),
+  `isSalar` boolean,
   `amount` double
 );
 
@@ -210,13 +210,13 @@ ALTER TABLE `staffSchool` ADD FOREIGN KEY (`school`) REFERENCES `school` (`id`);
 
 ALTER TABLE `school` ADD FOREIGN KEY (`address`) REFERENCES `address` (`id`);
 
-ALTER TABLE `grades` ADD FOREIGN KEY (`student`) REFERENCES `users` (`id`);
+ALTER TABLE `grade` ADD FOREIGN KEY (`student`) REFERENCES `users` (`id`);
 
-ALTER TABLE `grades` ADD FOREIGN KEY (`teacher`) REFERENCES `users` (`id`);
+ALTER TABLE `grade` ADD FOREIGN KEY (`teacher`) REFERENCES `users` (`id`);
 
-ALTER TABLE `grades` ADD FOREIGN KEY (`course`) REFERENCES `course` (`id`);
+ALTER TABLE `grade` ADD FOREIGN KEY (`course`) REFERENCES `course` (`id`);
 
-ALTER TABLE `grades` ADD FOREIGN KEY (`semester`) REFERENCES `semester` (`id`);
+ALTER TABLE `grade` ADD FOREIGN KEY (`semester`) REFERENCES `semester` (`id`);
 
 ALTER TABLE `homeworkAssign` ADD FOREIGN KEY (`course`) REFERENCES `course` (`id`);
 
