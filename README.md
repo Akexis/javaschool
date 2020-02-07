@@ -44,6 +44,7 @@ View Planning / Storyboarding<br/>
 * Java 8 Lambda Intro: [javabrains.io](https://www.youtube.com/watch?v=gpIUfj3KaOc&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3)<br/>
 * Spring Boot Quickstart: [javabrains.io](https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x)<br/>
 
-## Useful Articles and Books
+## Useful Articles, Notes, and Books
 * [API Guidelines](https://github.com/byrondover/api-guidelines/blob/master/Guidelines.md)
 * [Enterprise API Management by Luis Weir](https://www.packtpub.com/virtualization-and-cloud/enterprise-api-management)
+* [My Notes](https://github.com/Akexis/javaschool/tree/master/notes)
