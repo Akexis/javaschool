@@ -1,5 +1,7 @@
 package com.alexisprojects.users;
 
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,25 +11,28 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "role")
+@Table(name = "phoneType")
 @Component
-public class Role {
+public class PhoneType {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", updatable = false, nullable = false)
-	private long id;
-	private String role;
+	private UUID id;
+	@Column(name="type")
+	private String type;
 	
-	public long getId() {
+	public UUID getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
-	public String getRole() {
-		return role;
+	public String getType() {
+		return type;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setType(String type) {
+		this.type = type;
 	}
+	
+	
 }

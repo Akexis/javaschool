@@ -8,11 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 @Entity
 @Table(name = "users")
@@ -22,26 +22,37 @@ public abstract class UserEntity {
 	@GeneratedValue
 	@Column(name = "id", updatable = false, nullable = false)
 	private UUID id;
+	@Column(name="firstname")
 	private String firstName;
+	@Column(name="lastname")
 	private String lastName;
 	// If the profilePic is empty, set it to a default.
+	@Column(name="profilepic")
 	private String profilePic;
 	// Maybe temporary. Might actually put in password stuff.
+	@Column(name="password")
 	private String password;
-	private String role;
+	@Column(name="role")
+	private UUID role;
+	@Column(name="bio")
 	private String bio;
 	// Needs to be auto-generated
+	@Column(name="registered")
 	private LocalDateTime registered;
 	// Default should be false
+	@Column(name="approved")
 	private boolean approved;
 	
-	private List emails;
-	private List phoneNums;
-	private List addresses;
+	@Transient
+	private List<Email> emails;
+	@Transient
+	private List<Phone> phoneNums;
+	@Transient
+	private List<Address> addresses;
 	
 	public UserEntity() {}
 	
-	public UserEntity(String fn, String ln, String pic, String pw, String role, String bio, List emails, List nums, List addresses) {
+	public UserEntity(String fn, String ln, String pic, String pw, UUID role, String bio, List<Email> emails, List<Phone> nums, List<Address> addresses) {
 		this.firstName = fn;
 		this.lastName = ln;
 		this.profilePic = pic;
@@ -84,10 +95,10 @@ public abstract class UserEntity {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRole() {
+	public UUID getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(UUID role) {
 		this.role = role;
 	}
 	public String getBio() {
@@ -108,22 +119,22 @@ public abstract class UserEntity {
 	public void setApproved(boolean approved) {
 		this.approved = approved;
 	}
-	public List getEmails() {
+	public List<Email> getEmails() {
 		return emails;
 	}
-	public void setEmails(List emails) {
+	public void setEmails(List<Email> emails) {
 		this.emails = emails;
 	}
-	public List getPhoneNums() {
+	public List<Phone> getPhoneNums() {
 		return phoneNums;
 	}
-	public void setPhoneNums(List phoneNums) {
+	public void setPhoneNums(List<Phone> phoneNums) {
 		this.phoneNums = phoneNums;
 	}
-	public List getAddresses() {
+	public List<Address> getAddresses() {
 		return addresses;
 	}
-	public void setAddresses(List addresses) {
+	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
 	}
 	

@@ -14,7 +14,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	//TODO add user type parameter
 	//Single User Mapping
 	@RequestMapping("/students/{id}")
 	public UserEntity getStudent(@PathVariable UUID id) {
@@ -29,19 +28,28 @@ public class UserController {
 		return userService.getUser(id);
 	}
 	
-	//TODO add user type parameter
+	@RequestMapping("/users")
+	public List<UserEntity> getAllUsers(){
+		return userService.getAllUsers("Users");
+	}
+	
 	//Multiple Users Mapping
 	@RequestMapping("/students")
 	public List<UserEntity> getAllStudents(){
-		return userService.getAllUsers();
+		return userService.getAllUsers("Student");
 	}
 	@RequestMapping("/teachers")
 	public List<UserEntity> getAllTeachers(){
-		return userService.getAllUsers();
+		return userService.getAllUsers("Teacher");
 	}
 	@RequestMapping("/admin")
 	public List<UserEntity> getAllAdmin(){
-		return userService.getAllUsers();
+		return userService.getAllUsers("Admin");
+	}
+	
+	@RequestMapping("/pending")
+	public List<UserEntity> getAllPending(){
+		return userService.getPending();
 	}
 
 }
